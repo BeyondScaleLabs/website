@@ -43,9 +43,7 @@
         onmouseleave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
       >GitHub</a>
       <a
-        href="https://github.com/openkaiden"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/docs"
         class="hidden sm:block px-3 py-1.5 text-sm transition-colors"
         style="color: var(--text-secondary)"
         onmouseenter={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}

@@ -30,7 +30,7 @@
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Windows, macOS, Linux",
     description: "Open platform for running AI coding agents in isolated, reproducible sandboxes with enterprise-grade governance.",
-    url: "https://openkaiden.dev",
+    url: "https://openkaiden.ai",
     license: "https://www.apache.org/licenses/LICENSE-2.0",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     keywords: "AI agent sandboxing, enterprise AI governance, MCP workspace"

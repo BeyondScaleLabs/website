@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && npm install --prefix docs && npm run build --prefix docs && mkdir -p build/docs && cp -r docs/build/. build/docs/",
     "preview": "vite preview"
   },
   "devDependencies": {

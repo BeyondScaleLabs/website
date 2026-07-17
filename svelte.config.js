@@ -8,6 +8,12 @@ const config = {
     adapter: adapter({ fallback: '404.html' }),
     paths: {
       base: process.env.BASE_PATH ?? ''
+    },
+    prerender: {
+      handleHttpError: ({ path, message }) => {
+        if (path.startsWith('/docs')) return;
+        throw new Error(message);
+      }
     }
   }
 };

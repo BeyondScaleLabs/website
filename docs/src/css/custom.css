@@ -1,0 +1,758 @@
+@import '@fontsource-variable/dm-sans';
+
+/* ============================================
+   CSS Variables — Light Mode (matching kaiden.dev)
+   ============================================ */
+:root {
+  /* Primary accent — sky blue from kaiden.dev */
+  --ifm-color-primary: #1a6fa8;
+  --ifm-color-primary-dark: #155a8a;
+  --ifm-color-primary-darker: #104870;
+  --ifm-color-primary-darkest: #0a3356;
+  --ifm-color-primary-light: #4fc3f7;
+  --ifm-color-primary-lighter: #7dd3f7;
+  --ifm-color-primary-lightest: #b8e8fb;
+
+  /* Typography — Inter (as used by Fern docs) */
+  --ifm-font-family-base: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --ifm-font-size-base: 15px;
+  --ifm-line-height-base: 1.7;
+  --ifm-font-weight-normal: 400;
+
+  /* Headings */
+  --ifm-heading-font-family: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-line-height: 1.3;
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.375rem;
+  --ifm-h3-font-size: 1.125rem;
+  --ifm-h4-font-size: 1rem;
+
+  /* Navbar */
+  --ifm-navbar-height: 64px;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 1px 0 0 #dde2ec;
+  --ifm-navbar-padding-horizontal: 1.5rem;
+  --ifm-navbar-link-color: #3d5278;
+  --ifm-navbar-link-hover-color: #0d1b2e;
+  --ifm-navbar-link-active-color: #1a6fa8;
+
+  /* Sidebar */
+  --ifm-sidebar-width: 272px;
+  --doc-sidebar-width: 272px;
+
+  /* Sidebar light theme vars */
+  --kaiden-sidebar-bg: #ffffff;
+  --kaiden-sidebar-text: #3d5278;
+  --kaiden-sidebar-text-hover: #0d1b2e;
+  --kaiden-sidebar-text-active: #1a6fa8;
+  --kaiden-sidebar-hover-bg: #eef1f6;
+  --kaiden-sidebar-active-bg: rgba(79, 195, 247, 0.08);
+  --kaiden-sidebar-active-border: #4fc3f7;
+  --kaiden-sidebar-border: #dde2ec;
+  --kaiden-sidebar-category-color: #0d1b2e;
+
+  /* Content */
+  --ifm-container-width-xl: 1280px;
+  --ifm-background-color: #ffffff;
+  --ifm-color-content: #0d1b2e;
+
+  /* Code */
+  --ifm-code-font-size: 0.85rem;
+  --ifm-code-border-radius: 4px;
+  --ifm-code-background: #eef1f6;
+  --ifm-pre-border-radius: 8px;
+  --docusaurus-highlighted-code-line-bg: rgba(79, 195, 247, 0.08);
+
+  /* Borders & Radius */
+  --ifm-global-radius: 6px;
+  --ifm-toc-border-color: #dde2ec;
+
+  /* Links */
+  --ifm-link-color: #1a6fa8;
+  --ifm-link-hover-color: #155a8a;
+
+  /* Table */
+  --ifm-table-border-color: #dde2ec;
+  --ifm-table-head-background: #eef1f6;
+
+  /* Admonitions */
+  --ifm-color-info: #1a6fa8;
+  --ifm-color-tip: #0d7a5a;
+  --ifm-color-warning: #b45309;
+  --ifm-color-danger: #b91c1c;
+}
+
+/* ============================================
+   Dark Mode Variables (matching kaiden.dev dark)
+   ============================================ */
+[data-theme='dark'] {
+  --ifm-color-primary: #4fc3f7;
+  --ifm-color-primary-dark: #1a6fa8;
+  --ifm-color-primary-darker: #155a8a;
+  --ifm-color-primary-darkest: #104870;
+  --ifm-color-primary-light: #7dd3f7;
+  --ifm-color-primary-lighter: #b8e8fb;
+  --ifm-color-primary-lightest: #d9f3fe;
+
+  --ifm-background-color: #080f1a;
+  --ifm-navbar-background-color: #0d1b2e;
+  --ifm-navbar-shadow: 0 1px 0 0 #1e3358;
+  --ifm-navbar-link-color: #94afd4;
+  --ifm-navbar-link-hover-color: #e8eef7;
+  --ifm-navbar-link-active-color: #4fc3f7;
+  --ifm-color-content: #e8eef7;
+  --ifm-code-background: rgba(255, 255, 255, 0.05);
+  --ifm-toc-border-color: #1e3358;
+  --ifm-table-border-color: #1e3358;
+  --ifm-table-head-background: rgba(255, 255, 255, 0.04);
+  --docusaurus-highlighted-code-line-bg: rgba(79, 195, 247, 0.1);
+
+  --ifm-link-color: rgb(79, 195, 247);
+  --ifm-link-hover-color: #7dd3f7;
+  --kaiden-sidebar-bg: #0d1b2e;
+  --kaiden-sidebar-text: #94afd4;
+  --kaiden-sidebar-text-hover: #e8eef7;
+  --kaiden-sidebar-text-active: #4fc3f7;
+  --kaiden-sidebar-hover-bg: rgba(255, 255, 255, 0.04);
+  --kaiden-sidebar-active-bg: rgba(79, 195, 247, 0.08);
+  --kaiden-sidebar-active-border: #4fc3f7;
+  --kaiden-sidebar-border: #1e3358;
+  --kaiden-sidebar-category-color: #ffffff;
+}
+
+/* ============================================
+   Base Typography
+   ============================================ */
+body {
+  font-family: var(--ifm-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+.markdown h1:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.markdown h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.markdown h2:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.markdown h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.markdown h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ============================================
+   Navbar
+   ============================================ */
+.navbar {
+  box-shadow: var(--ifm-navbar-shadow);
+  border-bottom: none;
+}
+
+.navbar__brand {
+  gap: 10px;
+}
+
+.navbar__title {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: #0d1b2e;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #e8eef7;
+}
+
+.navbar__link {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.navbar__link:hover {
+  color: #0d1b2e;
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: #e8eef7;
+}
+
+/* GitHub icon in navbar */
+.navbar-github-link::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%235a6b89' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+[data-theme='dark'] .navbar-github-link::before {
+  filter: invert(1);
+  opacity: 0.6;
+}
+
+.navbar-github-link:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+.theme-doc-sidebar-container {
+  background-color: var(--kaiden-sidebar-bg) !important;
+  border-right: 1px solid var(--kaiden-sidebar-border) !important;
+  box-shadow: 1px 0 0 0 var(--kaiden-sidebar-border);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: var(--kaiden-sidebar-bg) !important;
+  border-right: 1px solid var(--kaiden-sidebar-border) !important;
+  box-shadow: 1px 0 0 0 var(--kaiden-sidebar-border);
+}
+
+.theme-doc-sidebar-container nav,
+.theme-doc-sidebar-container .menu {
+  background-color: var(--kaiden-sidebar-bg) !important;
+}
+
+/* Ensure the sidebar wrapper also carries the right border */
+[class*='docSidebarContainer'],
+[class*='sidebar_'] {
+  border-right: 1px solid var(--kaiden-sidebar-border) !important;
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+  background-color: var(--kaiden-sidebar-bg);
+}
+
+.navbar-sidebar__brand {
+  background-color: var(--kaiden-sidebar-bg);
+}
+
+/* All sidebar menu links */
+.menu__link {
+  color: var(--kaiden-sidebar-text) !important;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 8px;
+  padding: 0.5rem 0.875rem;
+  margin-right: 0.75rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu__link:hover {
+  background-color: var(--kaiden-sidebar-hover-bg) !important;
+  color: var(--kaiden-sidebar-text-hover) !important;
+  text-decoration: none;
+}
+
+/* Active sidebar link — full rounded fill, no left border */
+.menu__link--active:not(.menu__link--sublist) {
+  color: var(--kaiden-sidebar-text-active) !important;
+  background-color: var(--kaiden-sidebar-active-bg) !important;
+  font-weight: 500;
+}
+
+.menu__link--active:not(.menu__link--sublist)::before {
+  display: none;
+}
+
+/* Category headers — bold, normal case, not uppercase */
+.menu__list-item-collapsible > .menu__link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--kaiden-sidebar-category-color) !important;
+  padding: 0.5rem 0.875rem;
+  background: none !important;
+  cursor: pointer;
+}
+
+.menu__list-item-collapsible > .menu__link:hover {
+  color: var(--kaiden-sidebar-category-color) !important;
+  background: none !important;
+}
+
+.menu__list-item-collapsible > .menu__link--active {
+  background: none !important;
+}
+
+.menu__list-item-collapsible > .menu__link--active::before {
+  display: none;
+}
+
+/* Space between individual doc links */
+.menu__list-item:not(.menu__list-item-collapsible) {
+  margin-top: 0.125rem;
+}
+
+/* Sidebar caret */
+.menu__caret::before {
+  border-color: var(--kaiden-sidebar-category-color) transparent transparent;
+}
+
+.menu__caret:hover::before {
+  border-top-color: var(--kaiden-sidebar-text);
+}
+
+/* Sidebar list items — no border lines */
+.menu__list {
+  margin: 0;
+}
+
+.menu__list .menu__list {
+  padding-left: 0.25rem;
+  border-left: none;
+  margin-left: 0;
+}
+
+.menu__list > .menu__list-item:not(:first-child) > .menu__list-item-collapsible {
+  margin-top: 1.5rem;
+}
+
+/* Scrollbar */
+.theme-doc-sidebar-container ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-thumb {
+  background: rgba(13, 27, 46, 0.12);
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
+  background-color: var(--kaiden-sidebar-bg) !important;
+}
+
+/* ============================================
+   Table of Contents (right sidebar)
+   ============================================ */
+.table-of-contents {
+  font-size: 0.8125rem;
+  border-left: 1px solid var(--ifm-toc-border-color);
+}
+
+.table-of-contents__link {
+  color: #5a6b89;
+  font-weight: 400;
+  transition: color 0.15s;
+}
+
+[data-theme='dark'] .table-of-contents__link {
+  color: #94afd4;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
+
+/* ============================================
+   Breadcrumbs
+   ============================================ */
+.breadcrumbs {
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbs__item {
+  font-size: 0.8125rem;
+}
+
+.breadcrumbs__link {
+  color: #5a6b89;
+  font-weight: 400;
+  padding: 0.25rem 0;
+  background: none;
+  transition: color 0.15s;
+}
+
+[data-theme='dark'] .breadcrumbs__link {
+  color: #94afd4;
+}
+
+.breadcrumbs__link:hover {
+  color: var(--ifm-color-primary);
+  background: none;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: #0d1b2e;
+  background: none;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  color: #e8eef7;
+}
+
+.breadcrumbs__separator {
+  color: #dde2ec;
+}
+
+[data-theme='dark'] .breadcrumbs__separator {
+  color: #1e3358;
+}
+
+/* ============================================
+   Doc Article Content
+   ============================================ */
+.theme-doc-markdown article {
+  max-width: 760px;
+}
+
+.pagination-nav {
+  margin-top: 3rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  padding-top: 2rem;
+}
+
+.pagination-nav__link {
+  border: 1px solid #dde2ec;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pagination-nav__link:hover {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.15);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border-color: #1e3358;
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: #4fc3f7;
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.75rem;
+  color: #5a6b89;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .pagination-nav__sublabel {
+  color: #94afd4;
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+  font-size: 0.925rem;
+  color: #0d1b2e;
+}
+
+[data-theme='dark'] .pagination-nav__label {
+  color: #e8eef7;
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+pre {
+  border: 1px solid #dde2ec;
+  box-shadow: none;
+}
+
+[data-theme='dark'] pre {
+  border-color: #1e3358;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.875em;
+  vertical-align: baseline;
+}
+
+:not(pre) > code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  background-color: var(--ifm-code-background);
+  border: 1px solid #dde2ec;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  color: #1a6fa8;
+}
+
+[data-theme='dark'] :not(pre) > code {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #1e3358;
+  color: #4fc3f7;
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-table-border-color);
+  border-collapse: separate;
+  font-size: 0.875rem;
+  width: 100%;
+  display: table;
+}
+
+thead tr {
+  background-color: var(--ifm-table-head-background);
+  border-bottom: 1px solid var(--ifm-table-border-color);
+}
+
+thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5a6b89;
+  padding: 0.75rem 1rem;
+}
+
+[data-theme='dark'] thead th {
+  color: #94afd4;
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ifm-table-border-color);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #eef1f6;
+}
+
+[data-theme='dark'] tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ============================================
+   Admonitions
+   ============================================ */
+.admonition {
+  border-radius: 8px;
+  border: 1px solid;
+  border-left-width: 3px;
+  box-shadow: none;
+}
+
+.admonition-heading h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   Doc Page Layout
+   ============================================ */
+.docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
+  background-color: var(--ifm-background-color);
+}
+
+.container.padding-top--md.padding-bottom--lg {
+  padding-top: 2rem !important;
+}
+
+/* ============================================
+   Custom Footer
+   ============================================ */
+.kaiden-footer {
+  border-top: 1px solid var(--kaiden-sidebar-border);
+  background-color: var(--ifm-navbar-background-color);
+  padding: 4rem 0;
+}
+
+.kaiden-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .kaiden-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kaiden-footer__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+  text-decoration: none !important;
+}
+
+.kaiden-footer__icon {
+  border-radius: 22%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+}
+
+.kaiden-footer__name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-content);
+}
+
+.kaiden-footer__desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  max-width: 18rem;
+  color: var(--ifm-navbar-link-color);
+  margin: 0 0 1rem;
+}
+
+.kaiden-footer__license {
+  font-size: 0.75rem;
+  color: var(--ifm-navbar-link-color);
+  margin: 0;
+  opacity: 0.7;
+}
+
+.kaiden-footer__group-title {
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--ifm-navbar-link-color);
+  opacity: 0.7;
+  margin: 0 0 1rem;
+}
+
+.kaiden-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.kaiden-footer__link {
+  font-size: 0.875rem;
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  transition: color 0.15s, opacity 0.15s;
+}
+
+.kaiden-footer__link:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* ============================================
+   Images in docs
+   ============================================ */
+.markdown img {
+  border-radius: 8px;
+  border: 1px solid #dde2ec;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 3px rgba(13, 27, 46, 0.08);
+}
+
+[data-theme='dark'] .markdown img {
+  border-color: #1e3358;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  margin: 2rem 0;
+}
+
+/* ============================================
+   Search
+   ============================================ */
+.navbar__search-input {
+  border-radius: 6px;
+  background-color: #eef1f6;
+  border: 1px solid #dde2ec;
+  font-size: 0.875rem;
+  color: #0d1b2e;
+}
+
+.navbar__search-input:focus {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.15);
+}
+
+[data-theme='dark'] .navbar__search-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #1e3358;
+  color: #e8eef7;
+}
+
+/* ============================================
+   Mobile sidebar
+   ============================================ */
+@media (max-width: 996px) {
+  .navbar-sidebar {
+    background-color: var(--ifm-background-color);
+  }
+
+  .navbar-sidebar__items {
+    background-color: var(--ifm-background-color);
+  }
+}
