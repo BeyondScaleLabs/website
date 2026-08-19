@@ -1,0 +1,40 @@
+# Kaiden
+
+> Open platform for running AI coding agents in isolated, reproducible sandboxes with enterprise-grade governance.
+
+Kaiden is a desktop application and CLI (`kdn`) that lets developers run AI coding agents (Claude Code, Goose, Cursor, OpenCode) inside isolated containers or virtual machines. Platform engineers govern which models, tools, secrets, and MCP servers each team can access.
+
+## Key capabilities
+
+- **AI agent sandboxing**: Each coding session runs in an isolated Podman container or VM. Source code is mounted; the agent operates inside with no host access.
+- **Multi-agent support**: Supports Claude Code (Anthropic and Vertex AI), Goose (Block), Cursor, and OpenCode (Ollama/Ramalama).
+- **MCP integration**: Connect any Model Context Protocol server. Built-in registry + custom endpoints.
+- **Secret vault**: Credentials scoped to workspace or project, injected at runtime, never written to disk.
+- **Model freedom**: Anthropic, Google, OpenAI, Vertex AI, local models via Ollama.
+- **Enterprise governance**: Platform engineers define permitted models, tools, MCP servers, and resource limits via version-controlled workspace configs.
+
+## Components
+
+- `kaiden` — Desktop application (Electron + Svelte + TypeScript). GitHub: https://github.com/openkaiden/kaiden
+- `kdn` — CLI for managing workspaces and agent sessions (Go). GitHub: https://github.com/openkaiden/kdn
+- `mcp-registry-online` — Custom MCP registry. GitHub: https://github.com/openkaiden/mcp-registry-online
+- `kdn-api` — API definitions for the CLI. GitHub: https://github.com/openkaiden/kdn-api
+
+## Installation
+
+CLI:
+```
+go install github.com/openkaiden/kdn@latest
+kdn init
+kdn start
+```
+
+Desktop app: https://github.com/openkaiden/prereleases/releases
+
+## License
+
+Apache 2.0
+
+## Organization
+
+https://github.com/openkaiden
